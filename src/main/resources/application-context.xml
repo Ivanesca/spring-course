@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="datasourceProperties" class="ru.diasoft.config.DatasourceProperties">
+        <constructor-arg name="questionDatasourceName" value="/questions.csv"/>
+    </bean>
+
+    <bean id="questionInputService" class="ru.diasoft.service.impl.QuestionInputServiceImpl">
+        <constructor-arg name="datasourceProperties" ref="datasourceProperties"/>
+    </bean>
+
+    <bean id="questionOutPutService" class="ru.diasoft.service.impl.QuestionOutPutServiceImpl">
+        <constructor-arg name="questionInputService" ref="questionInputService"/>
+    </bean>
+
+</beans>

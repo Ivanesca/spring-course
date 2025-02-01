@@ -61,7 +61,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>ru.diasoft.Main</mainClass>
+                                    <mainClass>ru.diasoft.Application</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>

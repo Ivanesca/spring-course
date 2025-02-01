@@ -1,5 +1,7 @@
 package ru.diasoft.service;
 
+import ru.diasoft.model.Question;
+
 public interface QuestionOutPutService {
-    void printData();
+    void printQuestion(Question question);
 }

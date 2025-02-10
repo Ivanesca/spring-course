@@ -1,4 +1,8 @@
 package ru.diasoft.config;
 
-public record DatasourceProperties(String questionDatasourceName) {
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public record DatasourceProperties(@Value("${datasource.name}") String questionDatasourceName) {
 }

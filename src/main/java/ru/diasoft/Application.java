@@ -3,6 +3,7 @@ package ru.diasoft;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
+import ru.diasoft.model.TestResult;
 import ru.diasoft.service.TestingService;
 
 @ComponentScan
@@ -13,6 +14,7 @@ public class Application {
                 new AnnotationConfigApplicationContext(Application.class);
 
         TestingService testingService = context.getBean(TestingService.class);
-        testingService.startTest();
+        TestResult testResult = testingService.runTest();
+        System.out.println("Your result: " + testResult.correctAnswers() + "/" + testResult.totalQuestions());
     }
 }
